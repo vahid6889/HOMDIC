@@ -1,6 +1,7 @@
-# homdic
+# Homdic
 
-A new Flutter project.
+What does HOMDIC mean?
+HOMDIC is an abbreviation of the sentence ( How much does it cost ? ).
 
 ## Getting Started
 
