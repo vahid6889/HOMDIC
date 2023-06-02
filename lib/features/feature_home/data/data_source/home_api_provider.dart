@@ -20,7 +20,8 @@ class HomeApiProvider {
     });
 
     log(response.toString());
-
+    print('VVVVVVVVVVV');
+    print(response);
     return response;
   }
 }

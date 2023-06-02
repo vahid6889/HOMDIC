@@ -6,7 +6,8 @@ class HomeModel {
   HomeModel({
     this.message,
     this.status,
-    this.data,});
+    this.data,
+  });
 
   HomeModel.fromJson(dynamic json) {
     message = json['message'];
@@ -26,7 +27,6 @@ class HomeModel {
     }
     return map;
   }
-
 }
 
 /// sliders : [{"img":"https://shopbs.besenior.ir/uploads/sliders/16670413772526715.jpeg","link":null,"updated_at":1667041377},{"img":"https://shopbs.besenior.ir/uploads/sliders/16703568868232829.jpg","link":null,"updated_at":1670356886},{"img":"https://shopbs.besenior.ir/uploads/sliders/1670356992801035.jpg","link":null,"updated_at":1670356992}]
@@ -41,7 +41,8 @@ class Data {
     this.banners,
     this.categories,
     this.suggestionProducts,
-    this.nearShops,});
+    this.nearShops,
+  });
 
   Data.fromJson(dynamic json) {
     if (json['sliders'] != null) {
@@ -94,12 +95,12 @@ class Data {
       map['categories'] = categories?.map((v) => v.toJson()).toList();
     }
     if (suggestionProducts != null) {
-      map['suggestionProducts'] = suggestionProducts?.map((v) => v.toJson()).toList();
+      map['suggestionProducts'] =
+          suggestionProducts?.map((v) => v.toJson()).toList();
     }
     map['nearShops'] = nearShops;
     return map;
   }
-
 }
 
 /// title : "آبمیوه ها"
@@ -116,7 +117,8 @@ class SuggestionProducts {
     this.items,
     this.priority,
     this.updatedAt,
-    this.image,});
+    this.image,
+  });
 
   SuggestionProducts.fromJson(dynamic json) {
     title = json['title'];
@@ -150,7 +152,6 @@ class SuggestionProducts {
     map['image'] = image;
     return map;
   }
-
 }
 
 /// id : 104
@@ -175,7 +176,8 @@ class Items {
     this.callStatus,
     this.specialDiscount,
     this.star,
-    this.category,});
+    this.category,
+  });
 
   Items.fromJson(dynamic json) {
     id = json['id'];
@@ -214,7 +216,6 @@ class Items {
     map['category'] = category;
     return map;
   }
-
 }
 
 /// id : 1
@@ -229,7 +230,8 @@ class Categories {
     this.title,
     this.img,
     this.icon,
-    this.childs,});
+    this.childs,
+  });
 
   Categories.fromJson(dynamic json) {
     id = json['id'];
@@ -260,7 +262,6 @@ class Categories {
     }
     return map;
   }
-
 }
 
 /// id : 2
@@ -275,7 +276,8 @@ class Childs {
     this.title,
     this.img,
     this.icon,
-    this.childs,});
+    this.childs,
+  });
 
   Childs.fromJson(dynamic json) {
     id = json['id'];
@@ -299,7 +301,6 @@ class Childs {
     map['childs'] = childs;
     return map;
   }
-
 }
 
 /// sizeClass : "6"
@@ -318,7 +319,8 @@ class Banners {
     this.link,
     this.priority,
     this.categoryId,
-    this.updatedAt,});
+    this.updatedAt,
+  });
 
   Banners.fromJson(dynamic json) {
     sizeClass = json['sizeClass'];
@@ -348,7 +350,6 @@ class Banners {
     map['updated_at'] = updatedAt;
     return map;
   }
-
 }
 
 /// img : "https://shopbs.besenior.ir/uploads/sliders/16670413772526715.jpeg"
@@ -359,7 +360,8 @@ class Sliders {
   Sliders({
     this.img,
     this.link,
-    this.updatedAt,});
+    this.updatedAt,
+  });
 
   Sliders.fromJson(dynamic json) {
     img = json['img'];
@@ -377,7 +379,6 @@ class Sliders {
     map['updated_at'] = updatedAt;
     return map;
   }
-
 }
 
 /// id : 1
@@ -394,7 +395,8 @@ class NearShops {
     this.companyName,
     this.avatar,
     this.lat,
-    this.long,});
+    this.long,
+  });
 
   NearShops.fromJson(dynamic json) {
     id = json['id'];
@@ -421,5 +423,4 @@ class NearShops {
     map['long'] = long;
     return map;
   }
-
 }
