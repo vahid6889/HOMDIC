@@ -56,7 +56,7 @@ class BottomNav extends StatelessWidget {
                                     : Colors.grey.shade700,
                               )),
                           Text(
-                            'بیسینیور',
+                            'خانه',
                             style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: 'Yekan',

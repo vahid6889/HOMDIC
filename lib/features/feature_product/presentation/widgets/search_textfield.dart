@@ -1,9 +1,11 @@
+import 'package:homdic/common/arguments/productsArgument.dart';
 import 'package:homdic/common/blocs/searchbox_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:homdic/common/params/products_params.dart';
 import 'package:homdic/features/feature_product/data/models/all_products_model.dart';
+import 'package:homdic/features/feature_product/presentation/screens/all_products_screen.dart';
 import 'package:homdic/features/feature_product/repository/all_products_repository.dart';
 
 class SearchTextField extends StatelessWidget {
@@ -46,10 +48,11 @@ class SearchTextField extends StatelessWidget {
                                 offset: controller.text.length - 1))) {}
                       },
                       onSubmitted: (String prefix) {
-                        // Navigator.pushNamed(
-                        //   context,
-                        //   AllProductsScreen.routeName,
-                        //   arguments: ProductsArguments(searchTxt: prefix),);
+                        Navigator.pushNamed(
+                          context,
+                          AllProductsScreen.routeName,
+                          arguments: ProductsArguments(searchTxt: prefix),
+                        );
                       },
                       controller: controller,
                       style: const TextStyle(
@@ -68,10 +71,12 @@ class SearchTextField extends StatelessWidget {
                             color: Colors.grey,
                           ),
                           onPressed: () {
-                            // Navigator.pushNamed(
-                            //   context,
-                            //   AllProductsScreen.routeName,
-                            //   arguments: ProductsArguments(searchTxt: controller.text),);
+                            Navigator.pushNamed(
+                              context,
+                              AllProductsScreen.routeName,
+                              arguments:
+                                  ProductsArguments(searchTxt: controller.text),
+                            );
                           },
                         )),
                         enabledBorder: OutlineInputBorder(
@@ -114,10 +119,11 @@ class SearchTextField extends StatelessWidget {
                     },
                     onSuggestionSelected: (Products products) {
                       controller.text = products.name!;
-                      // Navigator.pushNamed(
-                      //   context,
-                      //   AllProductsScreen.routeName,
-                      //   arguments: ProductsArguments(searchTxt: products.name!),);
+                      Navigator.pushNamed(
+                        context,
+                        AllProductsScreen.routeName,
+                        arguments: ProductsArguments(searchTxt: products.name!),
+                      );
                     }),
               ),
 
@@ -140,12 +146,13 @@ class SearchTextField extends StatelessWidget {
                                   fontWeight: FontWeight.w200),
                             ),
                             ColorFiltered(
-                                colorFilter: ColorFilter.mode(
-                                    Colors.grey.shade800, BlendMode.srcIn),
-                                child: Image.asset(
-                                  "assets/images/bs_logo_textfield.png",
-                                  height: 28,
-                                )),
+                              colorFilter: ColorFilter.mode(
+                                  Colors.grey.shade800, BlendMode.srcIn),
+                              child: Image.asset(
+                                "assets/images/hc_logo.png",
+                                height: 28,
+                              ),
+                            ),
                           ],
                         ),
                       ),

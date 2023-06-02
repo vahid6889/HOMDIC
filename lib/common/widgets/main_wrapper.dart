@@ -33,12 +33,16 @@ class MainWrapper extends StatelessWidget {
 
             /// search box
             Container(
-              decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                BoxShadow(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
                     blurRadius: 2,
                     color: Colors.grey.shade400,
-                    offset: const Offset(0, 3))
-              ]),
+                    offset: const Offset(0, 3),
+                  )
+                ],
+              ),
               child: Padding(
                 padding:
                     const EdgeInsets.only(left: 10.0, right: 10, bottom: 10),
