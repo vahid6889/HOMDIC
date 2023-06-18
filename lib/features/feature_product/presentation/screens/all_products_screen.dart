@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:homdic/common/arguments/productsArgument.dart';
-import 'package:homdic/common/widgets/main_appbar.dart';
 import 'package:homdic/features/feature_product/presentation/bloc/all_products_cubit/all_products_cubit.dart';
 import 'package:homdic/features/feature_product/presentation/widgets/products_grid.dart';
 import 'package:homdic/locator.dart';
@@ -22,8 +21,17 @@ class AllProductsScreen extends StatelessWidget {
         // BlocProvider(create: (_) =>  FilterCubit()),
       ],
       child: Scaffold(
-        appBar: const MainAppbar(
-          title: 'محصولات',
+        // appBar: const MainAppbar(
+        //   title: 'محصولات',
+        // ),
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: const Text(
+            'محصولات',
+            style: TextStyle(color: Colors.black, fontFamily: "Vazir"),
+          ),
         ),
         body: ProductsGrid(
           categoryId: arg.categoryId,
